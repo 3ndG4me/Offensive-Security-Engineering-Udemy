@@ -3,15 +3,20 @@ provider "aws" {
   region = "us-east-2"
 }
 
-data "aws_ami" "kali" {
-  most_recent = true
-  owners      = ["aws-marketplace"]
+data "aws_ami" "ubuntu" {
+  most_recent = "true"
 
   filter {
     name   = "name"
-    values = ["*Kali Linux*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"]
 }
 
 
@@ -23,24 +28,18 @@ variable "access_addr" {
 
 }
 
-resource "aws_security_group" "phish_group" {
-  name        = "phish_group"
-  description = "Allow Ports for GoPhish and SSH access"
+resource "aws_security_group" "vpn_group" {
+  name        = "vpn_group"
+  description = "Allow Ports for VPN and SSH access"
 
-  # Open common web ports for GoPhish
+  # Open the default OpenVPN Port
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port   = 1194
+    to_port     = 1194
+    protocol    = "udp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 
 
   # ssh for remote access, might want to lock down to your IP prior to rolling out
@@ -59,17 +58,18 @@ resource "aws_security_group" "phish_group" {
   }
 }
 
-resource "aws_instance" "primary_phish" {
-  ami             = data.aws_ami.kali.id
+resource "aws_instance" "primary_vpn" {
+  ami             = data.aws_ami.ubuntu.id
   instance_type   = "t2.micro"
-  security_groups = [aws_security_group.phish_group.name]
+  security_groups = [aws_security_group.vpn_group.name]
   key_name        = "primary-c2-key"
 
+
   tags = {
-    Name = "Primary Phish"
+    Name = "Primary vpn"
   }
 }
 
 output "IP" {
-  value = aws_instance.primary_phish.public_ip
+  value = aws_instance.primary_vpn.public_ip
 }
