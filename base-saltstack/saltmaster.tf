@@ -3,7 +3,7 @@ provider "aws" {
   region = "us-east-2"
 }
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "ubuntu_master" {
   most_recent = "true"
 
   filter {
@@ -58,7 +58,7 @@ resource "aws_security_group" "salt_group" {
 
 resource "aws_instance" "primary_salt" {
 
-  ami             = data.aws_ami.ubuntu.id
+  ami             = data.aws_ami.ubuntu_master.id
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.salt_group.name]
   key_name        = "primary-c2-key"

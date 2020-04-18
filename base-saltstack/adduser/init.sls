@@ -1,3 +1,4 @@
+Add nix User:
   user.present:
     - name: gretchen
     - password: password
