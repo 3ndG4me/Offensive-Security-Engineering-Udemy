@@ -17,6 +17,13 @@ This document contains all links and references to various documentation, resour
 ## Serverless Framework
 - https://serverless.com/framework/docs/
 
+## Vagrant
+- Download: https://www.vagrantup.com/downloads.html
+- Documentation: https://www.vagrantup.com/docs/
+
+## Virtualbox
+- https://www.virtualbox.org/
+
 ## Golang
 - https://golang.org/doc/
 - On most debian based distros: `apt install golang`
