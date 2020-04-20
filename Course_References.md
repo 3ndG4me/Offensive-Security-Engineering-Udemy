@@ -3,6 +3,9 @@
 This document contains all links and references to various documentation, resources, and tutorials that are used in the course.
 
 
+## Injection Youtube
+- https://www.youtube.com/channel/UC31jVeFdiPWsxMRqhXapRGQ
+
 ## DevOps Tools
 - https://www.saltstack.com/
 - Ubuntu Install Instructions: https://repo.saltstack.com/#ubuntu
