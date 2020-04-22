@@ -6,6 +6,10 @@ This document contains all links and references to various documentation, resour
 ## Injection Youtube
 - https://www.youtube.com/channel/UC31jVeFdiPWsxMRqhXapRGQ
 
+## AWS
+- Make an account: https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
+- Access key tutorial: https://blog.gruntwork.io/authenticating-to-aws-with-the-credentials-file-d16c0fbcbf9e
+
 ## DevOps Tools
 - https://www.saltstack.com/
 - Ubuntu Install Instructions: https://repo.saltstack.com/#ubuntu
