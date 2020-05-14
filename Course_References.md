@@ -59,6 +59,9 @@ This document contains all links and references to various documentation, resour
 - Download: https://github.com/gophish/gophish/releases
 - Documentation: https://docs.getgophish.com/user-guide/
 
+## PwnDrop
+- Site: https://breakdev.org/pwndrop/
+- Repo: https://github.com/kgretzky/pwndrop
 ## C2 Servers/Frameworks
 - **Cobalt Strike** is software for Adversary Simulations and Red Team Operations. https://cobaltstrike.com/
 - **Empire** is a post-exploitation framework that includes a pure-PowerShell2.0 Windows agent, and a pure Python 2.6/2.7 Linux/OS X agent. https://github.com/BC-SECURITY/Empire

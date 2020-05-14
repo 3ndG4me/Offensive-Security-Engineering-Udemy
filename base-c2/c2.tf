@@ -50,6 +50,12 @@ resource "aws_security_group" "c2_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+ ingress {
+  from_port    = 31337
+  to_port      = 31337
+  protocol     = "tcp"
+  cidr_blocks  = ["0.0.0.0/0"]
+}
   # Armitage Teamserver port for multiplayer, might want to restrict by IP...
   ingress {
     from_port   = 55553
