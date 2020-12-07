@@ -9,5 +9,6 @@ You will also need to subscribe to the following AWS Marketplace AMIs to query t
 - Ubuntu: https://aws.amazon.com/marketplace/pp/B07CQ33QKV
 - Kali: https://aws.amazon.com/marketplace/pp/B08LL91KKB
 
+## References:
 - **[Course References](https://github.com/3ndG4me/Offensive-Security-Engineering-Udemy/blob/master/Course_References.md)**
 - **[Manual Configuration Reference](https://github.com/3ndG4me/Offensive-Security-Engineering-Udemy/blob/master/Using_a_VM.md)**
