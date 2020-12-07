@@ -9,7 +9,7 @@ data "aws_ami" "kali" {
 
   filter {
     name   = "name"
-    values = ["*Kali Linux*"]
+    values = ["kali-linux-2020.4rc2-aws.raw-804fcc46-63fc-4eb6-85a1-50e66d6c7215-ami-06f8d3ecbfbfaacc3.4"]
   }
 
 }

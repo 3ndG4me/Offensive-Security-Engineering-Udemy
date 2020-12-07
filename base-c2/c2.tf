@@ -9,11 +9,10 @@ data "aws_ami" "kali" {
 
   filter {
     name   = "name"
-    values = ["*Kali Linux*"]
+    values = ["kali-linux-2020.4rc2-aws.raw-804fcc46-63fc-4eb6-85a1-50e66d6c7215-ami-06f8d3ecbfbfaacc3.4"]
   }
 
 }
-
 
 # Put your IP here to whitelist it for ssh
 
@@ -108,7 +107,7 @@ resource "aws_instance" "primary_c2" {
     destination = "/tmp/c2_setup.sh"
     connection {
       type        = "ssh"
-      user        = "ec2-user"
+      user        = "kali"
       private_key = file("~/.ssh/primary-c2-key.pem")
       host        = self.public_ip
     }
@@ -118,7 +117,7 @@ resource "aws_instance" "primary_c2" {
     inline = ["chmod +x /tmp/c2_setup.sh && sudo /tmp/c2_setup.sh"]
     connection {
       type        = "ssh"
-      user        = "ec2-user"
+      user        = "kali"
       private_key = file("~/.ssh/primary-c2-key.pem")
       host        = self.public_ip
     }
