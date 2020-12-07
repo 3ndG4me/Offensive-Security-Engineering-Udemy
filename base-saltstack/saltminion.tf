@@ -1,20 +1,19 @@
 data "aws_ami" "ubuntu_minion" {
   most_recent = "true"
-
+  owners      = ["aws-marketplace"]
   count = 2
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+    values = ["f991a988-22fb-4c72-a790-09e227224ea5.3b73ef49-208f-47e1-8a6e-4ae768d8a333.DC0001"]
   }
 
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-
-  owners = ["099720109477"]
 }
+
 
 
 resource "aws_security_group" "ssh_group" {
