@@ -9,7 +9,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["f991a988-22fb-4c72-a790-09e227224ea5.3b73ef49-208f-47e1-8a6e-4ae768d8a333.DC0001"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
   filter {
@@ -22,8 +22,8 @@ data "aws_ami" "ubuntu" {
 # Put your IP here to whitelist it for ssh
 
 variable "access_addr" {
-    type    = string
-    default = "0.0.0.0/0"
+  type    = string
+  default = "0.0.0.0/0"
 
 }
 
