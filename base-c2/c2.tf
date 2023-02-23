@@ -3,13 +3,14 @@ provider "aws" {
   region = "us-east-2"
 }
 
+# Subscribe to latest Kali instance in market place first! https://aws.amazon.com/marketplace/pp/prodview-fznsw3f7mq7to
 data "aws_ami" "kali" {
   most_recent = true
-  owners      = ["aws-marketplace"]
+  owners      = ["679593333241"]
 
   filter {
     name   = "name"
-    values = ["kali-linux-2020.4rc2-aws.raw-804fcc46-63fc-4eb6-85a1-50e66d6c7215-ami-06f8d3ecbfbfaacc3.4"]
+    values = ["kali-rolling-amd64-2022.4.1-804fcc46-63fc-4eb6-85a1-50e66d6c7215"]
   }
 
 }
