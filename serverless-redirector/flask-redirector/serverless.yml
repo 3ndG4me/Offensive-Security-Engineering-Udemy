@@ -1,0 +1,29 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: YOURORGHERE
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: flask-redirector
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: flask-redirector
+
+custom:
+  wsgi:
+    app: app.app
+
+provider:
+  name: aws
+  runtime: python3.12
+
+functions:
+  api:
+    handler: wsgi_handler.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: ANY
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
