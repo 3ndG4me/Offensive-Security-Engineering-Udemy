@@ -31,7 +31,7 @@ func GetCmd(init int) (int){
 	if (init == 0){
 		url = "https://127.0.0.1/agent-check-in"
 	}else{
-		url = "https://b127.0.0.1/"
+		url = "https://127.0.0.1/"
 	}
     resp, err := http.Get(url)
     if err != nil {
