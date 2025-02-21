@@ -1,4 +1,4 @@
-# Salt Stack Setup
+# Salt Project (formerly Salt Stack) Setup
 
 1. Run `terraform apply` to spin up the servers
 2. Follow the instructions to install the salt-master and salt-minions here: https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html
