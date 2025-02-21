@@ -1,7 +1,7 @@
 # Salt Stack Setup
 
 1. Run `terraform apply` to spin up the servers
-2. Follow the instructions to install the salt-master and salt-minions here: https://repo.saltstack.com/#ubuntu
+2. Follow the instructions to install the salt-master and salt-minions here: https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html
     - `sudo apt install salt-master` on the master
     - `sudo apt install salt-minion` on the minions
 3. Get master fingerprint `sudo salt-key -F master`
