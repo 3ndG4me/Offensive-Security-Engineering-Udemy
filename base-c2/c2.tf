@@ -10,7 +10,7 @@ data "aws_ami" "kali" {
 
   filter {
     name   = "name"
-    values = ["kali-rolling-amd64-2022.4.1-804fcc46-63fc-4eb6-85a1-50e66d6c7215"]
+    values = ["kali-last-snapshot-amd64-2024.4.1-804fcc46-63fc-4eb6-85a1-50e66d6c7215"]
   }
 
 }
